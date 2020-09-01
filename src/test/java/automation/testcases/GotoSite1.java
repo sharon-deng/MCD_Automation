@@ -1,6 +1,7 @@
 package automation.testcases;
 
 import automation.utils.CaseBase;
+import automation.utils.Verify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;

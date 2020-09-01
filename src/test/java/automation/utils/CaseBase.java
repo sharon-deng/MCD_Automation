@@ -62,22 +62,26 @@ public abstract class CaseBase {
         driver.findElement(By.id("email")).sendKeys(userName);
         driver.findElement(By.id("password")).sendKeys(pwd);
         driver.findElement(By.xpath("//button/span")).click();
-        Verify.assertTrue(shortWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[text()='Werribee']"))) != null, "Verify Login.");
+        Verify.assertTrue(shortWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Werribee']"))) != null, "Verify Login.");
     }
 
-    protected void logout(){
+    protected boolean logout(){
         try{
             By byIcon = By.xpath("(//*[@id='root']//button[@type='button' and @aria-haspopup='true'])[2]");
             By byLogOut = By.xpath("//*[@id='menu-appbar']//li[normalize-space(text())='Log Out']");
             WebElement elementIcon = shortWait.until(ExpectedConditions.elementToBeClickable(byIcon));
             if (elementIcon!=null){
                 elementIcon.click();
-                driver.findElement(byLogOut).click();
-                LOGGER.info("Logout system.");
+
+                js.executeScript("arguments[0].click();", driver.findElement(byLogOut));
+                //driver.findElement(byLogOut).click();
+                Verify.assertTrue(defaultWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email"))) != null, "Verify Log out.");
+                return true;
             }
         } catch (WebDriverException ex){
             LOGGER.warn("Cannot logout due to NOT login yet.");
         }
+        return false;
     }
 
 }
