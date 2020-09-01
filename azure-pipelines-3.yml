@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'MCD'
+  name: 'MCD'
 
 steps:
 - task: Maven@3
