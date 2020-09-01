@@ -7,10 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class DemoTestCaseWeb extends CaseBase {
+public class GotoSite2 extends CaseBase {
 
-    @Test(description = "My first Test Case Demo")
-    public void goToSite1() {
+    @Test(description = "GotoSite2")
+    public void goToSite2() {
         driver.get("https://poc15c-aks-ingress.southeastasia.cloudapp.azure.com/?origin=self");
         driver.manage().window().setSize(new Dimension(1925, 1052));
 
@@ -23,6 +23,6 @@ public class DemoTestCaseWeb extends CaseBase {
         builder.moveToElement(element, 0, 0).perform();
 
         logout();
-    }
 
+    }
 }

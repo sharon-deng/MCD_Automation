@@ -4,7 +4,8 @@
 <suite name="example suite 1" verbose="1" >
     <test name="Regression suite 1" parallel="methods" thread-count="1" preserve-order="true" >
         <classes>
-            <class name="automation.testcases.DemoTestCaseWeb"/>
+            <class name="automation.testcases.GotoSite1"/>
+            <class name="automation.testcases.GotoSite2"/>
         </classes>
     </test>
 </suite>
