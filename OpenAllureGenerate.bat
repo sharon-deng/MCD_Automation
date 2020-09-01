@@ -1,0 +1,1 @@
+libs/allure-2.13.3/bin/allure serve allure-results\
