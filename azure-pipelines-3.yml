@@ -20,6 +20,3 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean test'
-- task: BatchScript@1
-  inputs:
-    filename: './AllureGenerateReport.bat'
