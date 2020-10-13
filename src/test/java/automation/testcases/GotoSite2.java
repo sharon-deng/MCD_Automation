@@ -25,5 +25,8 @@ public class GotoSite2 extends CaseBase {
 
         logout();
 
+       // Verify.assertTrue(1==1, "Check 1 is 1.");
+       // Verify.assertEquals(1,2,"Check the ver");
+
     }
 }
